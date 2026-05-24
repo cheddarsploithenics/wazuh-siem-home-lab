@@ -1,146 +1,179 @@
-# Wazuh SIEM Home Lab
+# Enterprise Wazuh SIEM Capstone Lab
 
 ## Overview
 
-Designed and implemented a Wazuh SIEM home lab environment using Ubuntu Server, VMware, and Windows Server systems for centralized monitoring, vulnerability detection, endpoint visibility, and threat analysis.
+Designed and deployed a Wazuh SIEM environment within a segmented ESXi infrastructure to monitor Windows-based systems for threat detection, vulnerability management, compliance validation, and centralized security event analysis.
 
-The lab environment was built to simulate defensive security monitoring and blue-team operations within a Windows domain environment.
+This capstone project focused on blue-team operations, endpoint visibility, vulnerability detection, CIS benchmarking, and security monitoring across multiple Windows systems.
 
 ---
 
-## Lab Environment
+## Infrastructure Environment
 
-### Infrastructure
-- Ubuntu Server (Wazuh Server)
-- Windows Server 2022 Domain Controller
-- Windows Server 2016 (Intentionally Vulnerable)
-- VMware Workstation
+### Virtualization Platform
+- VMware ESXi
 
-### Tools & Technologies
+### Network Segmentation
+- VLAN 30 Server Network
+- Static IP Addressing
+
+### Monitored Systems
+| System | Purpose |
+|---|---|
+| Ubuntu Server | Wazuh SIEM Server |
+| Windows Server 2022 | DNS/DHCP Server |
+| Windows Server 2022 | RADIUS Server |
+| Windows 11 | Endpoint Client |
+
+---
+
+## Technologies Used
+
 - Wazuh 4.10
+- Ubuntu Server
+- Windows Server 2022
+- Windows 11
+- VMware ESXi
 - OpenSSH
 - PuTTY
-- Windows Server
-- Ubuntu Linux
-- VMware
-- MITRE ATT&CK Mapping
-- CIS Benchmarking
+- CIS Benchmarks
+- Threat Hunting Dashboards
+- Vulnerability Detection
+- Endpoint Monitoring
 
 ---
 
 ## Project Objectives
 
-This project focused on:
+This lab environment was designed to demonstrate:
 
-- SIEM deployment and configuration
-- Endpoint monitoring
+- SIEM deployment and administration
+- Endpoint monitoring and telemetry
+- Centralized log analysis
 - Vulnerability detection
-- Security event analysis
-- Threat visibility
+- Threat hunting visibility
 - CIS compliance benchmarking
-- MITRE ATT&CK monitoring
-- Windows server monitoring
-- Blue-team security operations concepts
+- Agent management
+- Security event correlation
+- Windows infrastructure monitoring
+- Blue-team defensive security concepts
 
 ---
 
 ## Wazuh Server Deployment
 
-Configured an Ubuntu-based Wazuh server and enabled remote management through OpenSSH.
+Configured an Ubuntu-based Wazuh server and enabled remote administration through SSH.
 
-### Installation Steps
-- Installed OpenSSH server
-- Enabled and verified SSH service
-- Installed curl
-- Installed Wazuh 4.10 using the official installer script
-- Verified Wazuh services and HTTPS access
+### Deployment Steps
+- Installed and configured OpenSSH
+- Installed curl dependencies
+- Installed Wazuh 4.10 using the official installer
+- Configured static IP addressing
+- Exported and deployed VM to VMware ESXi
+- Assigned VM to VLAN 30 server network
 
 ---
 
-## Endpoint Agent Configuration
+## Endpoint Agent Deployment
 
-Configured and monitored two Windows Server endpoints:
+Installed and configured Wazuh agents across multiple monitored systems.
 
-| System | Purpose |
-|---|---|
-| Windows Server 2022 | Properly configured domain controller |
-| Windows Server 2016 | Intentionally vulnerable monitoring target |
-
-### Agent Management
-- Added agents through Wazuh agent manager
-- Generated and extracted authentication keys
+### Agent Deployment Process
 - Installed Wazuh agents on Windows systems
-- Connected agents to centralized Wazuh server
+- Configured manager IP addressing
+- Registered agents through Wazuh agent manager
+- Generated authentication keys
+- Imported authentication keys into endpoints
+- Started Wazuh agent services
+- Verified agent communication with SIEM server
 
 ---
 
-## Security Monitoring Features
+## Security Monitoring & Visibility
 
-The environment demonstrated:
+The Wazuh environment provided centralized monitoring for:
 
-- Vulnerability monitoring
-- Endpoint visibility
-- Security event collection
-- Threat intelligence integration
+- Endpoint activity
+- Windows event collection
+- Vulnerability detection
+- Threat hunting
 - File integrity monitoring
-- MITRE ATT&CK mapping
-- CIS benchmark compliance analysis
-- Alert visualization
-- Security dashboard monitoring
+- Authentication monitoring
+- Registry monitoring
+- Compliance validation
+- Security event correlation
 
 ---
 
-## Vulnerability & Compliance Analysis
+## Threat Hunting & Event Analysis
 
-The intentionally vulnerable Windows Server 2016 machine generated:
+The platform was used to analyze:
 
+- Windows logon/logoff events
+- Registry integrity events
+- Authentication activity
+- Security alerts
+- Event severity levels
+- Endpoint telemetry
+
+Threat hunting dashboards provided visibility into security events and suspicious activity patterns across monitored systems.
+
+---
+
+## CIS Benchmark Compliance
+
+CIS benchmark dashboards were used to:
+- Identify security misconfigurations
+- Validate compliance controls
+- Review failed benchmark checks
+- Analyze hardening opportunities
+
+This helped demonstrate security posture visibility within monitored Windows systems.
+
+---
+
+## Vulnerability Detection
+
+Wazuh vulnerability detection identified:
 - Critical vulnerabilities
-- High severity findings
-- Medium severity findings
-- CIS benchmark failures
-- MITRE ATT&CK tactic detections
+- High severity vulnerabilities
+- Medium severity vulnerabilities
+- Low severity vulnerabilities
 
-The properly configured Server 2022 system demonstrated improved compliance and reduced vulnerability exposure.
-
----
-
-## MITRE ATT&CK Visibility
-
-Wazuh dashboards were used to monitor:
-- Defense evasion activity
-- Persistence attempts
-- Privilege escalation
-- Initial access tactics
+Detected vulnerabilities included:
+- Windows Server vulnerabilities
+- Microsoft Edge vulnerabilities
+- Multiple CVE findings with varying CVSS severity scores
 
 ---
 
 ## Skills Demonstrated
 
-- SIEM Deployment
-- Wazuh Administration
+- SIEM Administration
+- Wazuh Deployment
+- Windows Security Monitoring
 - Linux Administration
-- Windows Server Monitoring
-- Security Monitoring
-- Threat Detection
+- VMware ESXi Administration
+- Threat Hunting
 - Vulnerability Management
 - Endpoint Security
+- CIS Benchmarking
+- Security Event Analysis
 - Blue-Team Operations
-- Security Compliance
-- MITRE ATT&CK Analysis
-- Virtualization
+- Infrastructure Documentation
 
 ---
 
 ## Repository Structure
 
 ```text
-reports/       -> Full project documentation
+reports/       -> Full capstone documentation
 screenshots/   -> Wazuh dashboards and monitoring screenshots
 README.md      -> Project overview
 ```
 
 ---
 
-## Full Report
+## Full Documentation
 
-The complete project documentation is located in the `/reports` directory.
+The complete capstone report and implementation walkthrough can be found in the `/reports` directory.
